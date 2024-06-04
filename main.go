@@ -55,15 +55,15 @@ func main() {
 	flag.Usage = func() {
 		fmt.Println("Usage: pwgen --amount [num] --length [num]")
 		fmt.Println("  --amount, -a: number of passwords to generate (default 5)")
-		fmt.Println("  --length, -l: length of the words to use (default 5, must be between 4 and 8)")
+		fmt.Println("  --length, -l: length of the words to use (default 5, must be number from 4 and 10)")
 	}
 
 	flag.Parse()
 
 	// Convert length string to an integer and verify it is a valid number from 4-8
 	length, err := strconv.Atoi(*lengthPtr)
-	if err != nil || length < 4 || length > 8 {
-		fmt.Println("Error: 'length' must be a number from 4 to 8")
+	if err != nil || length < 4 || length > 10 {
+		fmt.Println("Error: 'length' must be a number from 4 to 10")
 		return
 	}
 
