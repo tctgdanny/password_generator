@@ -4,7 +4,8 @@ You can tell that it's a password generator by the way that it is.
 ## Installation
 If you work at The Core and have a Mac, this is already on your computer 😊  
 
-To install manually, download `install.sh`, make it executable, and run it. Or clone the repo and run `go build -o pwgen main.go`.  
+To install manually, download `install.sh`, make it executable, and run it.  
+Or clone the repo and run `go build -o pwgen main.go`.  
 
 ## Description
 Generates a list of passwords in Word+Number format.  
