@@ -1,6 +1,11 @@
 # Password Generator
 You can tell that it's a password generator by the way that it is.  
 
+## Installation
+If you work at The Core and have a Mac, this is already on your computer 😊  
+To install manually: `sudo cd /tmp && curl -O https://raw.githubusercontent.com/thecoretg/password_generator/main/install.sh && chmod +x install.sh && ./install.sh`
+
+
 ## Description
 Generates a list of passwords in Word+Number format.  
 
