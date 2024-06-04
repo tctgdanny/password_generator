@@ -5,11 +5,12 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"math/rand"
 	"strconv"
-	"strings"
-	"time"
+
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
 
 //go:embed word_lists/*.json
@@ -23,7 +24,7 @@ func loadWordsList(wordLength string) ([]string, error) {
 	}
 	defer jsonFile.Close()
 
-	byteValue, _ := ioutil.ReadAll(jsonFile)
+	byteValue, _ := io.ReadAll(jsonFile)
 
 	var wordsList []string
 	json.Unmarshal(byteValue, &wordsList)
@@ -32,10 +33,10 @@ func loadWordsList(wordLength string) ([]string, error) {
 
 func generateWordNumber(wordsList []string, count int) {
 	// Generate a random word from the loaded list, and a random number with 4 characters
-	rand.Seed(time.Now().UnixNano())
 	for i := 0; i < count; i++ {
 		word := wordsList[rand.Intn(len(wordsList))]
-		word = strings.Title(word)
+		caser := cases.Title(language.Und)
+		word = caser.String(word)
 		number := rand.Intn(10000)
 		fmt.Printf("%s+%04d\n", word, number)
 	}
