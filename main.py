@@ -1,7 +1,7 @@
 import random
 import json
 
-with open("5_letter_words.json", "r") as file:
+with open("word_lists/5_letter_words.json", "r") as file:
     words_list = json.load(file)
 
 if words_list:
