@@ -14,6 +14,8 @@ Relic+0281
 ```
 
 ## Options
+Quick syntax can be found by entering: `pwgen --help` or `pwgen -h`  
+
 You can add the flag `--length` or `-l` followed by a number from 4-10, to choose how many characters are in randomly generated passwords.  
 
 Additionally, add `--amount` or `-a` to choose how many passwords you want generated.  
