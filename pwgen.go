@@ -29,11 +29,16 @@ func LoadWords(wordLength string) ([]string, error) {
 	return wordsList, nil
 }
 
-func GeneratePasswords(wordsList []string, count int) ([]string, error) {
+func GeneratePasswords(length string, count int) ([]string, error) {
 
 	// Generate a random word from the loaded list, and a random number with 4 characters
 	var passwords []string
 	for i := 0; i < count; i++ {
+		wordsList, err := LoadWords(length)
+		if err != nil {
+			return nil, err
+		}
+
 		word := wordsList[rand.Intn(len(wordsList))]
 		caser := cases.Title(language.Und)
 		word = caser.String(word)
