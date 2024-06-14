@@ -1,4 +1,4 @@
-module github.com/thecoretg/password_generator
+module github.com/thecoretg/pwgen
 
 go 1.22.2
 
